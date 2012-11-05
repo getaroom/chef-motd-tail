@@ -1,6 +1,5 @@
 
-***
-Chef-Client - <%= node.name %>
+Chef Client: <%= node.name %>
 Hostname: <%= node['cloud'] ? node['cloud']['public_hostname'] : node['fqdn'] %>
 <% if ! Chef::Config[:solo] -%>
 Chef Server: <%= Chef::Config[:chef_server_url] %>
@@ -11,7 +10,7 @@ Environment: <%= node.chef_environment %>
 Last Run: <%= ::Time.now %>
 
 Roles:
-<% node['roles'].each do |role| -%>
+<% @roles.each do |role| -%>
   <%= role %>
 <% end -%>
 <% if node['tags'] && !node['tags'].empty? -%>
@@ -21,5 +20,4 @@ Tags:
   <%= tag %>
 <% end -%>
 <% end -%>
-***
 

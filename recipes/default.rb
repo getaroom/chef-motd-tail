@@ -24,4 +24,5 @@ template "/etc/motd.tail" do
   owner "root"
   mode "0644"
   backup 0
+  variables(:roles => node['motd-tail']['roles'] == "run_list" ? node.run_list.roles : node['roles'])
 end
