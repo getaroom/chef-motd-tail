@@ -1,9 +1,9 @@
 #
-# Author:: Nathan Haneysmith<nathan@opscode.com>
-# Cookbook Name:: motd
+# Author:: Nathan Haneysmith <nathan@chef.io>
+# Cookbook:: motd
 # Recipe:: default
 #
-# Copyright 2009, Opscode, Inc.
+# Copyright:: 2009-2019, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,11 +18,6 @@
 # limitations under the License.
 #
 
-template "/etc/motd.tail" do
-  source "motd.tail.erb"
-  group "root"
-  owner "root"
-  mode "0644"
-  backup 0
-  variables(:roles => node['motd-tail']['roles'] == "run_list" ? node.run_list.roles : node['roles'])
+motd_tail '/etc/motd.tail' do
+  action :create
 end
