@@ -38,7 +38,7 @@ action :create do
     group 'root'
     backup 0
     action :create
-    variables(:roles => node['motd-tail']['roles'] == "run_list" ? node.run_list.roles : node['roles'])
+    variables(roles: node['motd-tail']['roles'] == 'run_list' ? node.run_list.roles : node['roles'])
   end
 
   if node['platform_version'].to_f > 12.04

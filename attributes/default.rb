@@ -19,4 +19,4 @@
 #
 
 default['motd-tail']['additional_text'] = nil
-default['motd-tail']['roles'] = "all"
+default['motd-tail']['roles'] = 'all'
