@@ -10,4 +10,4 @@ supports 'ubuntu'
 
 source_url 'https://github.com/chef-cookbooks/motd-tail'
 issues_url 'https://github.com/chef-cookbooks/motd-tail/issues'
-chef_version '>= 12.15'
+chef_version '>= 12.5' if respond_to?(:chef_version)
